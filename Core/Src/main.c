@@ -27,6 +27,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include "stm32f1xx_hal.h"
+#include "SEGGER_RTT.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -115,6 +116,7 @@ int main(void)
         HAL_Delay(100);
         printf("ADCValue%d:  %f \r\n", i, (ADC_buffer[i]) * 3.3 / 4095);
         HAL_Delay(100);
+        SEGGER_RTT_WriteString(0, "Hello World from SEGGER!666\r\n");
     }
     
     /* USER CODE END WHILE */
